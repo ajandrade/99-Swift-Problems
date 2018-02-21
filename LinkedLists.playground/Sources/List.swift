@@ -22,4 +22,14 @@ public class List<T> {
     nextItem = List(Array(values.suffix(from: 1)))
   }
   
+  public func printList() {
+    let list = self
+    var result = "List: \(list.value)"
+    while let next = list.nextItem {
+      result += " \(next.value)"
+      list.nextItem = next.nextItem
+    }
+    print(result)
+  }
+  
 }
