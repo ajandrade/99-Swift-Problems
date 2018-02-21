@@ -75,3 +75,21 @@ extension List {
 
 // -------- //
 
+/* P04 (*) Find the number of elements of a linked list.
+ Example: List(1, 1, 2, 3, 5, 8).length
+ Result: 6
+ */
+
+extension List {
+  var length: Int {
+    return length(self, counter: 1)
+  }
+  
+  private func length(_ list: List, counter: Int) -> Int {
+    guard let next = list.nextItem else { return counter }
+    return length(next, counter: counter + 1)
+  }
+}
+
+let list = List(1, 1, 2, 3, 5, 8)
+list?.length
