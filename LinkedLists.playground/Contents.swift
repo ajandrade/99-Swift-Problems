@@ -1,13 +1,10 @@
 import Foundation
 
-/* P01 (*) Find the last element of a linked list.
- http://www.enekoalonso.com/projects/99-swift-problems/#p01
- 
- Example:
-  List(1, 1, 2, 3, 5, 8).last
+// Problems @ http://www.enekoalonso.com/projects/99-swift-problems/
 
- Result:
-  8
+/* P01 (*) Find the last element of a linked list.
+ Example: List(1, 1, 2, 3, 5, 8).last
+ Result: 8
 */
 
 extension List {
@@ -26,14 +23,11 @@ extension List {
 //let p01 = List(1, 1, 2, 3, 5, 8)
 //p01?.last
 
+// -------- //
+
 /* P02 (*) Find the last but one element of a linked list.
- http://www.enekoalonso.com/projects/99-swift-problems/#p02
- 
- Example:
-  List(1, 1, 2, 3, 5, 8).pennultimate
- 
- Result:
-  5
+ Example: List(1, 1, 2, 3, 5, 8).pennultimate
+ Result: 5
 */
 
 extension List {
@@ -51,16 +45,16 @@ extension List {
 //let p02 = List(1, 1, 2, 3, 5, 8)
 //p02?.pennultimate
 
+// -------- //
+
 /* P03 (*) Find the Kth element of a linked list.
- http://www.enekoalonso.com/projects/99-swift-problems/#p03
  By convention, the first element in the list is element 0. Use Swift subscripts to get the value from the linked list.
-
-Example:
- let list = List(1, 1, 2, 3, 5, 8)
- list[2]
-
-Result:
- 2
+ 
+ Example:
+  let list = List(1, 1, 2, 3, 5, 8)
+  list[2]
+ 
+ Result: 2
 */
 
 extension List {
@@ -76,6 +70,8 @@ extension List {
 }
 
 // Test P03:
-let list = List(1, 1, 2, 3, 5, 8)!
-list[6]
+//let list = List(1, 1, 2, 3, 5, 8)!
+//list[6]
+
+// -------- //
 
