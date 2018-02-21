@@ -70,8 +70,8 @@ extension List {
 }
 
 // Test P03:
-//let list = List(1, 1, 2, 3, 5, 8)!
-//list[6]
+//let list = List(1, 1, 2, 3, 5, 8)
+//list?[6]
 
 // -------- //
 
@@ -91,5 +91,40 @@ extension List {
   }
 }
 
-let list = List(1, 1, 2, 3, 5, 8)
-list?.length
+// Test P04:
+//let list = List(1, 1, 2, 3, 5, 8)
+//list?.length
+
+// -------- //
+
+/* P05 (*) Reverse a linked list.
+ Example: List(1, 1, 2, 3, 5, 8).reverse()
+ Result: List(8, 5, 3, 2, 1, 1)
+*/
+
+extension List {
+  func reversed() -> List? {
+    return reverse(self, newList: nil)
+  }
+
+  private func reverse(_ list: List, newList: List?) -> List? {
+    guard let next = list.nextItem else {
+      let head = List(list.value)
+      head?.nextItem = newList
+      return head
+    }
+
+    if newList == nil {
+      let tail = List(list.value)
+      return reverse(next, newList: tail)
+    }
+    
+    let new = List(list.value)
+    new?.nextItem = newList
+    return reverse(next, newList: new)
+  }
+}
+
+// Test P05:
+//let reversedList = List(1, 1, 2, 3, 5, 8)?.reversed()
+//reversedList?.printList()
